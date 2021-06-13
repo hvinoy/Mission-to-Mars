@@ -3,13 +3,12 @@ from bs4 import BeautifulSoup
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 import requests
-import pymongo
-
+from flask_pymongo import pymongo
 
 def scrape():
     # browser = init_browser()
     executable_path = {'executable_path': ChromeDriverManager().install()}
-    browser = Browser('chrome', **executable_path, headless=False)
+    browser = Browser('chrome', **executable_path, headless=True)
     
     # %%
     url = 'https://redplanetscience.com/'
@@ -78,7 +77,8 @@ def scrape():
 
     # %%
     html_string = html_table.replace('\n', '')
-    
+    test = html_string.replace('dataframe','table table-striped')
+    test
     
 
     # %% [markdown]
@@ -189,7 +189,7 @@ def scrape():
     mars_dict["news_title"] = news_title
     mars_dict["news_p"] = news_p
     mars_dict["featured_image_url"] = featured_image
-    mars_dict["mars_facts"] = html_string
+    mars_dict["mars_facts"] = test
     mars_dict['hemisphere_image_urls'] = hemisphere_image_urls
 
     return mars_dict

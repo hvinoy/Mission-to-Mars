@@ -11,13 +11,15 @@
 
 <body>
   <div class="container-fluid">
-    <div class="jumbotron text-center">
-      <h1>Mission to Mars</h1>
+    <div class="jumbotron text-center" style="background-image: url('https://wallpapercave.com/wp/wp2461878.jpg'); background-size: 100% 100%; background-attachment: fixed;">
+      <h1 style="color: white;">Mission to Mars</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
     </div>
     <h1>Latest Mars News</h1>
     <h3>{{ mars_dict.news_title }}</h3>
     <p>{{ mars_dict.news_p}}</p>
+
+    <hr>
   
 
     <div class="row">
@@ -26,34 +28,39 @@
         <img src="{{mars_dict.featured_image_url}}">
       </div>
       <div class = "col-lg-4">
-        <h1> Mars Fact</h1>
+        <h1 style="text-align: center;"> Mars Fact</h1>
         {{mars_dict.mars_facts|safe}}
       
       </div>
     </div>
+
+    <hr>
     <div class="row">
-      <h1 class="text-center" > Mars Hemispheres</h1>
+      <h1 class="text-center"> Mars Hemispheres</h1>
     </div>
+    <hr>
     
  
-
-
+  
     <div class="row">
       {% for hem in mars_dict.hemisphere_image_urls %}
-      <div class="col-lg-3">
-        <div class="card" style="width: 90rem;" >
+      <div class=" card col-md-3">
+        <div class="card text-primary border-primary"  style="width: 90rem;" >
           <div class="card-body">
             <img src="{{hem.image_url}}" class="card-img-top" width="30%">
-            <h4 class="card-title">{{hem.title}}</h4>  
+            <h4 class="card-subtitle mb-2 text-muted">{{hem.title}}</h4>  
           </div>
         </div>
       </div>
       {% endfor %} 
-    </div>
+      </div>
+ 
 
-      
+
+
+
     
-
+    
 
 </body>
 
