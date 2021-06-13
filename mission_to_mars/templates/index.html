@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Costa Rica Weather</title>
+  <title>Mars Facts</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -15,9 +15,46 @@
       <h1>Mission to Mars</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
     </div>
-    <h3>Max Temp: {{ mars_dict.news_title }}</h3>
-  </div>
-  </div>
+    <h1>Latest Mars News</h1>
+    <h3>{{ mars_dict.news_title }}</h3>
+    <p>{{ mars_dict.news_p}}</p>
+  
+
+    <div class="row">
+      <div class = "col-lg-8">
+        <h1>Featured Mars Image</h1>
+        <img src="{{mars_dict.featured_image_url}}">
+      </div>
+      <div class = "col-lg-4">
+        <h1> Mars Fact</h1>
+        {{mars_dict.mars_facts|safe}}
+      
+      </div>
+    </div>
+    <div class="row">
+      <h1 class="text-center" > Mars Hemispheres</h1>
+    </div>
+    
+ 
+
+
+    <div class="row">
+      {% for hem in mars_dict.hemisphere_image_urls %}
+      <div class="col-lg-3">
+        <div class="card" style="width: 90rem;" >
+          <div class="card-body">
+            <img src="{{hem.image_url}}" class="card-img-top" width="30%">
+            <h4 class="card-title">{{hem.title}}</h4>  
+          </div>
+        </div>
+      </div>
+      {% endfor %} 
+    </div>
+
+      
+    
+
+
 </body>
 
 </html>
