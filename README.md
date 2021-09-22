@@ -14,4 +14,4 @@ Used MongoDB with Flask templating to create a new HTML page that displays all o
 
 ![image](https://user-images.githubusercontent.com/78995175/134271634-46f841f9-f8a4-4a8c-bd2b-0f0564bcbbd6.png)
 
-
+![image](https://user-images.githubusercontent.com/78995175/134271688-5ba6c8d1-9e9e-4bb4-9923-09166694d05e.png)
