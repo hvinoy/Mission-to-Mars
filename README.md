@@ -11,6 +11,7 @@ Created a Jupyter Notebook file called mission_to_mars.ipynb and used this to co
 Visited multiple websites to collect data and cpnverted the data into the necessary format.
 
 Used MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the websites.
+Used Splinter to navigate the sites when needed and BeautifulSoup to help find and parse out the necessary data.
 
 ![image](https://user-images.githubusercontent.com/78995175/134271634-46f841f9-f8a4-4a8c-bd2b-0f0564bcbbd6.png)
 
